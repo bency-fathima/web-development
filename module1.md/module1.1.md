@@ -66,33 +66,7 @@ Example:
 <br>
 <input type="text" placeholder="Enter your name">
 ```
-
-### **5️⃣ Semantic HTML**
-Semantic elements help define the meaning of content.
-
-Example:
-```html
-<header>
-    <h1>My Blog</h1>
-</header>
-<nav>
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
-</nav>
-<section>
-    <article>
-        <h2>HTML Basics</h2>
-        <p>HTML is the foundation of web development.</p>
-    </article>
-</section>
-<footer>
-    <p>&copy; 2025 My Website</p>
-</footer>
-```
-
+ 
 ### **🚀 Conclusion**
-Understanding the anatomy of HTML syntax is crucial for structuring websites effectively. By mastering **tags, elements, attributes, nesting, and semantic HTML**, you can create well-structured and accessible web pages.
+Understanding the anatomy of HTML syntax is crucial for structuring websites effectively. By mastering **tags, elements, attributes, nesting you can create well-structured and accessible web pages.
 

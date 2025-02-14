@@ -1,4 +1,4 @@
-# Learn the Anatomy of HTML Syntax to Structure Your Websites
+ 
 
 ## 📌 Understanding HTML Syntax
 

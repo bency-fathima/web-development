@@ -1,3 +1,18 @@
+# State in React
+
+## 1. **Introduction**
+State in React is an object that allows components to hold and manage dynamic data. It enables reactivity, meaning that when the state changes, the component re-renders to reflect the new data.
+
+---
+
+## 2. **Why Use State?**
+- **Manages Dynamic Data**: React components can update and track changes efficiently.
+- **Triggers UI Updates**: When the state changes, React automatically re-renders the component.
+- **Encapsulated Data**: Each component maintains its own state, making it modular and predictable.
+
+---
+
+
 # Props in React
 
 ## 1. **Introduction**
@@ -100,6 +115,19 @@ Greeting.defaultProps = {
 If `name` is not provided, "Guest" will be used as the default value.
 
 ---
+
+--
+
+## 5. **State vs Props**
+| Feature   | State | Props |
+|-----------|-------|-------|
+| Mutability | Mutable (can be changed) | Immutable (cannot be changed) |
+| Scope | Local to the component | Passed from parent to child |
+| Updates | Triggers re-renders | Does not trigger re-renders |
+
+---
+
+
 
 ## 6. **Conclusion**
 Props are essential in React for making components dynamic and reusable. They allow communication between components and improve modularity in React applications.

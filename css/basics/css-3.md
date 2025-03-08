@@ -1,84 +1,103 @@
-# How to Use Inline, Internal, and External CSS
+# CSS Borders
 
-## Introduction
-CSS (Cascading Style Sheets) is used to style HTML elements. There are three main ways to apply CSS to a webpage:
+CSS borders are used to define the outline of an HTML element. Borders can have different styles, widths, and colors.
 
-## 1. Inline CSS
-Inline CSS is applied directly within an HTML element using the `style` attribute. It is useful for quick styling but not recommended for large projects due to maintainability issues.
+## 1. Basic Border Properties
 
-### Example:
-```html
-<p style="color: blue; font-size: 16px;">This is a styled paragraph.</p>
-```
-
-### Advantages:
-- Quick and easy to apply.
-- Useful for small changes.
-
-### Disadvantages:
-- Hard to maintain and update.
-- Does not support media queries or complex styles.
-
-## 2. Internal CSS
-Internal CSS is placed within a `<style>` tag inside the `<head>` section of an HTML document. It is useful for styling a single webpage.
-
-### Example:
-```html
-<head>
-    <style>
-        p {
-            color: blue;
-            font-size: 16px;
-        }
-    </style>
-</head>
-```
-
-### Advantages:
-- Useful for styling a single page.
-- No need for an external file.
-
-### Disadvantages:
-- Not reusable across multiple pages.
-- Can make the HTML file bulky.
-
-## 3. External CSS
-External CSS is stored in a separate file and linked to the HTML document using a `<link>` tag. It is the best method for large-scale projects.
-
-### Example:
-```html
-<head>
-    <link rel="stylesheet" href="styles.css">
-</head>
-```
-
-Example `styles.css` file:
+### `border`
+The `border` property is a shorthand for setting the width, style, and color of a border.
 ```css
-p {
-    color: blue;
-    font-size: 16px;
-}
+border: 2px solid black;
 ```
 
-### Advantages:
-- Keeps HTML clean and maintainable.
-- Can be reused across multiple pages.
-- Supports media queries and complex styles.
+### `border-width`
+Defines the thickness of the border.
+```css
+border-width: 5px;
+```
 
-### Disadvantages:
-- Requires an additional HTTP request.
-- Styles may not load if the CSS file is missing or incorrectly linked.
+### `border-style`
+Defines the appearance of the border.
 
-## Conclusion
-Each CSS method has its own use case:
-- **Inline CSS** is best for quick fixes.
-- **Internal CSS** is useful for single-page designs.
-- **External CSS** is the most efficient for large projects.
+#### Common Border Styles:
+```css
+border-style: solid;    /* Solid line */
+border-style: dashed;   /* Dashed line */
+border-style: dotted;   /* Dotted line */
+border-style: double;   /* Double line */
+border-style: groove;   /* 3D groove effect */
+border-style: ridge;    /* 3D ridge effect */
+border-style: inset;    /* 3D inset effect */
+border-style: outset;   /* 3D outset effect */
+border-style: none;     /* No border */
+```
 
-By understanding these different approaches, you can choose the best method for your web development needs.
+### `border-color`
+Sets the color of the border.
+```css
+border-color: red;
+```
 
 ---
-**Next Steps:**
-- Learn about CSS specificity and inheritance.
-- Explore responsive design with media queries.
-- Experiment with CSS frameworks like Bootstrap or Tailwind CSS.
+
+## 2. Individual Border Sides
+You can apply borders to specific sides of an element:
+```css
+border-top: 3px solid blue;
+border-right: 4px dashed green;
+border-bottom: 5px double red;
+border-left: 2px dotted purple;
+```
+
+---
+
+## 3. Rounded Borders (`border-radius`)
+The `border-radius` property creates rounded corners.
+```css
+border-radius: 10px;
+```
+You can specify different values for each corner:
+```css
+border-top-left-radius: 20px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 30px;
+border-bottom-left-radius: 5px;
+```
+
+For circular borders, use `50%`:
+```css
+border-radius: 50%;
+```
+
+---
+
+## 4. Border Shorthand
+You can combine `border-width`, `border-style`, and `border-color` in a single declaration.
+```css
+border: 4px dotted blue;
+```
+For individual sides:
+```css
+border-top: 2px solid black;
+border-right: 3px dashed red;
+```
+
+---
+
+## 5. Border Images (`border-image`)
+The `border-image` property allows using images as borders.
+```css
+border-image: url("border.png") 30 round;
+```
+
+Example with `border-image-source` and `border-image-slice`:
+```css
+border-image-source: url("border.png");
+border-image-slice: 20;
+border-image-repeat: stretch;
+```
+
+---
+
+## Conclusion
+CSS borders allow you to enhance the appearance of elements by defining their outlines with various styles, colors, and widths. Combining borders with `border-radius` and `border-image` can create visually appealing designs.

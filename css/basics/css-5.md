@@ -101,6 +101,59 @@ div {
     margin: 20px;  /* Space outside the border */
 }
 ```
+# CSS Height and Width Properties
+
+CSS provides the `height` and `width` properties to control the size of elements.
+
+## 1. The `width` Property
+The `width` property sets the horizontal size of an element.
+```css
+width: 200px;
+```
+This sets the element’s width to `200px`.
+
+### Width Values
+- **Fixed (`px`)**: Defines an exact width.
+  ```css
+  width: 300px;
+  ```
+- **Percentage (`%`)**: Sets width relative to the parent element.
+  ```css
+  width: 50%;
+  ```
+- **Auto**: Adjusts width based on content.
+  ```css
+  width: auto;
+  ```
+- **Viewport Width (`vw`)**: Relative to the viewport’s width.
+  ```css
+  width: 50vw;
+  ```
+
+## 2. The `height` Property
+The `height` property sets the vertical size of an element.
+```css
+height: 100px;
+```
+This sets the element’s height to `100px`.
+
+### Height Values
+- **Fixed (`px`)**: Defines an exact height.
+  ```css
+  height: 200px;
+  ```
+- **Percentage (`%`)**: Sets height relative to the parent element.
+  ```css
+  height: 50%;
+  ```
+- **Auto**: Adjusts height based on content.
+  ```css
+  height: auto;
+  ```
+- **Viewport Height (`vh`)**: Relative to the viewport’s height.
+  ```css
+  height: 50vh;
+  ```
 
 ---
 

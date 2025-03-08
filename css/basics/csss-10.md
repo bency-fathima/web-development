@@ -1,115 +1,161 @@
-# Implementing Responsiveness Using CSS Media Queries
+# CSS Tables
 
-## Introduction
-CSS media queries enable responsive web design by applying different styles depending on the device's screen size, resolution, or other characteristics. This ensures a seamless user experience across desktops, tablets, and mobile devices.
-
-## 1. What Are Media Queries?
-Media queries allow you to apply CSS rules based on specific conditions, such as screen width, height, device type, or orientation.
-
-### Syntax:
-```css
-@media (condition) {
-    /* CSS rules */
-}
-```
-
-## 2. Basic Media Query for Responsive Design
-The following media query applies styles only when the viewport width is **600px or smaller** (commonly used for mobile devices):
-```css
-@media (max-width: 600px) {
-    body {
-        background-color: lightgray;
-    }
-}
-```
-
-## 3. Common Breakpoints
-Here are commonly used breakpoints for responsive design:
-- **Mobile (small screens):** `max-width: 600px`
-- **Tablet (medium screens):** `max-width: 768px`
-- **Laptop (large screens):** `max-width: 1024px`
-- **Desktop (extra-large screens):** `min-width: 1200px`
-
-### Example:
-```css
-/* Mobile */
-@media (max-width: 600px) {
-    .container {
-        width: 100%;
-        padding: 10px;
-    }
-}
-
-/* Tablet */
-@media (max-width: 768px) {
-    .container {
-        width: 80%;
-    }
-}
-
-/* Desktop */
-@media (min-width: 1200px) {
-    .container {
-        width: 60%;
-    }
-}
-```
-
-## 4. Media Queries Based on Device Orientation
-You can apply styles based on whether the device is in portrait or landscape mode.
-```css
-@media (orientation: portrait) {
-    body {
-        background-color: lightblue;
-    }
-}
-
-@media (orientation: landscape) {
-    body {
-        background-color: lightgreen;
-    }
-}
-```
-
-## 5. Combining Multiple Conditions
-You can combine multiple conditions using logical operators:
-- **AND (`and`)**: Requires both conditions to be true.
-- **OR (`,`)**: Applies if any condition is met.
-
-### Example:
-```css
-@media (min-width: 600px) and (max-width: 1024px) {
-    body {
-        font-size: 18px;
-    }
-}
-```
-
-## 6. Responsive Typography
-Use relative units (`em`, `rem`, `%`, `vw`, `vh`) for scalable text sizing.
-```css
-html {
-    font-size: 16px;
-}
-
-@media (max-width: 768px) {
-    html {
-        font-size: 14px;
-    }
-}
-```
-
-## 7. Testing Media Queries
-To test responsiveness:
-1. Open Developer Tools (`F12` or `Ctrl + Shift + I`).
-2. Click the **Toggle Device Toolbar** (`Ctrl + Shift + M`).
-3. Resize the viewport to see media queries in action.
-
-## Conclusion
-Using CSS media queries allows for a flexible and responsive web design that adapts to various screen sizes and devices. By leveraging breakpoints, orientation-specific styles, and relative units, you can ensure a seamless user experience across all platforms.
+CSS provides various properties to style tables, making them more visually appealing and easier to read.
 
 ---
-**Next Steps:**
-- Experiment with `min-width` and `max-width` media queries.
-- Explore CSS Grid and Flexbox for advanced responsive layouts.
-- Optimize images and assets for different screen resolutions.
+
+## 1. Basic Table Styling
+The default table styling can be modified using basic properties.
+```css
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+}
+```
+
+### Explanation:
+- `width: 100%`: Makes the table occupy full width.
+- `border-collapse: collapse`: Merges cell borders into a single border.
+- `border: 1px solid black`: Adds a border to table cells.
+- `padding: 10px`: Adds space inside each cell.
+- `text-align: left`: Aligns text to the left.
+
+---
+
+## 2. Adding Table Borders
+Defines the border style for table elements.
+```css
+table, th, td {
+    border: 2px solid blue;
+    border-collapse: collapse;
+}
+```
+
+---
+
+## 3. Table Header Styling
+You can style the table header differently for better readability.
+```css
+th {
+    background-color: #f4f4f4;
+    color: black;
+    font-weight: bold;
+}
+```
+
+---
+
+## 4. Alternating Row Colors
+Creates a striped effect for better visibility.
+```css
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+```
+
+---
+
+## 5. Hover Effect on Rows
+Enhances user interaction with hover effects.
+```css
+tr:hover {
+    background-color: #ddd;
+}
+```
+
+---
+
+## 6. Centering Table Content
+Aligns text and centers the table.
+```css
+table {
+    margin: auto;
+    text-align: center;
+}
+```
+
+---
+
+## 7. Fixed Table Layout
+Controls how table cells resize when content overflows.
+```css
+table {
+    table-layout: fixed;
+}
+```
+
+---
+
+## 8. Example: Styled Table
+
+### HTML
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Table Example</title>
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: auto;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Country</th>
+        </tr>
+        <tr>
+            <td>John Doe</td>
+            <td>30</td>
+            <td>USA</td>
+        </tr>
+        <tr>
+            <td>Jane Smith</td>
+            <td>25</td>
+            <td>Canada</td>
+        </tr>
+        <tr>
+            <td>Mark Brown</td>
+            <td>35</td>
+            <td>UK</td>
+        </tr>
+    </table>
+</body>
+</html>
+```
+
+### Explanation:
+- The table has borders, padding, and background colors for better readability.
+- The `nth-child(even)` property adds alternating row colors.
+- The `tr:hover` effect highlights a row when hovered.
+
+---
+
+## Conclusion
+CSS allows you to customize tables to enhance their appearance and usability. Proper styling ensures tables are readable, accessible, and visually appealing.

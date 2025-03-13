@@ -4,7 +4,6 @@
 CSS selectors are used to target HTML elements and apply styles to them. Below are some common types of selectors:
 
 
-
 ### 1. Element Selector
 Targets a specific HTML element.
 ```css

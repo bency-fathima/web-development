@@ -11,58 +11,61 @@ A **block-level** element occupies the full width available, creating a new line
 ```html
 <div style="display: block;">This is a block element.</div>
 <p style="display: block;">This is another block element.</p>
-Block Element Characteristics:
-Takes up the full width of its parent container.
+```
 
-Starts on a new line (stacked vertically).
+### Block Element Characteristics:
 
-You can set width, height, margin, padding, etc.
+- Takes up the full width of its parent container.
+- Starts on a new line (stacked vertically).
+- You can set width, height, margin, padding, etc.
 
-Block-level elements include:
-<div>
+### Block-level elements include:
 
-<p>
+- `<div>`
+- `<p>`
+- `<h1>`, `<h2>`, `<h3>`, etc.
+- `<form>`
 
-<h1>, <h2>, <h3>, etc.
+## Inline Elements
 
-<form>
+An **inline** element only takes up as much width as necessary and does not start on a new line. It flows alongside other inline elements, and you cannot set their width and height.
 
-Inline Elements
-An inline element only takes up as much width as necessary and does not start on a new line. It flows alongside other inline elements, and you cannot set their width and height.
+### Example of Inline Elements
 
-Example of Inline Elements
-html
-Copy
+```html
 <span style="display: inline;">This is an inline element.</span>
 <a style="display: inline;" href="#">This is a link (inline element).</a>
-Inline Element Characteristics:
-Takes up only as much width as the content inside it.
+```
 
-Does not start on a new line (appears inline with other content).
+### Inline Element Characteristics:
 
-You cannot set width or height for inline elements, but you can set padding and margin (on left and right).
+- Takes up only as much width as the content inside it.
+- Does not start on a new line (appears inline with other content).
+- You cannot set width or height for inline elements, but you can set padding and margin (on left and right).
 
-Inline elements include:
-<span>
+### Inline elements include:
 
-<a>
+- `<span>`
+- `<a>`
+- `<strong>`
+- `<em>`
 
-<strong>
+## Inline vs Block Comparison
 
-<em>
+| Property         | Inline                          | Block                             |
+|------------------|--------------------------------|-----------------------------------|
+| **Width**        | Takes up only the width of its content. | Takes up the full width of its parent. |
+| **Height**       | Height cannot be set.          | Height can be set.                |
+| **Margin & Padding** | Margin and padding only work on left/right. | Margin and padding work on all sides. |
+| **New Line**     | Does not start on a new line.  | Starts on a new line.             |
 
-Inline vs Block Comparison
-Property	Inline	Block
-Width	Takes up only the width of its content.	Takes up the full width of its parent.
-Height	Height cannot be set.	Height can be set.
-Margin & Padding	Margin and padding only work on left/right.	Margin and padding work on all sides.
-New Line	Does not start on a new line.	Starts on a new line.
-Changing Display Property
+## Changing Display Property
+
 You can also change the display type of an element using CSS. For example, you can turn a block element into inline or vice versa.
 
-Example:
-css
-Copy
+### Example:
+
+```css
 .block-to-inline {
   display: inline;
 }
@@ -70,20 +73,14 @@ Copy
 .inline-to-block {
   display: block;
 }
-Example HTML:
-html
-Copy
+```
+
+### Example HTML:
+
+```html
 <div class="block-to-inline">This block is now inline.</div>
 <span class="inline-to-block">This inline element is now a block.</span>
-This demonstrates how elements can be transformed from one type to another by using the display property.
+```
 
-vbnet
-Copy
-
-Let me know if you need it in a downloadable format!
-
-
-
-
-
+This demonstrates how elements can be transformed from one type to another by using the `display` property.
 

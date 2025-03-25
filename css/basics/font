@@ -12,19 +12,23 @@ The `font-family` property defines the typeface of the text. You can specify mul
 body {
   font-family: 'Arial', sans-serif;
 }
-Font Stacks:
-Generic Font Families: These are fallback options like serif, sans-serif, monospace.
+```
 
-Web-safe Fonts: These are fonts that are available across most operating systems, like Arial, Courier, and Georgia.
+### Font Stacks:
 
-Custom Fonts: You can also use custom fonts by linking to external font services like Google Fonts.
+- **Generic Font Families:** These are fallback options like `serif`, `sans-serif`, `monospace`.
 
-2. font-size
-The font-size property defines the size of the text. The value can be specified in various units, such as px, em, rem, %, vw, and vh.
+- **Web-safe Fonts:** These are fonts that are available across most operating systems, like `Arial`, `Courier`, and `Georgia`.
 
-Example:
-css
-Copy
+- **Custom Fonts:** You can also use custom fonts by linking to external font services like Google Fonts.
+
+## 2. `font-size`
+
+The `font-size` property defines the size of the text. The value can be specified in various units, such as `px`, `em`, `rem`, `%`, `vw`, and `vh`.
+
+### Example:
+
+```css
 h1 {
   font-size: 32px;
 }
@@ -32,21 +36,25 @@ h1 {
 p {
   font-size: 1.2em;
 }
-Units:
-px: Pixels, a fixed size.
+```
 
-em: Relative to the font-size of the parent element.
+### Units:
 
-rem: Relative to the font-size of the root element (<html>).
+- **px:** Pixels, a fixed size.
 
-%: Relative to the font-size of the parent element.
+- **em:** Relative to the `font-size` of the parent element.
 
-3. font-weight
-The font-weight property defines the thickness of the font. Common values are normal, bold, or numeric values ranging from 100 to 900.
+- **rem:** Relative to the `font-size` of the root element (`<html>`).
 
-Example:
-css
-Copy
+- **%:** Relative to the `font-size` of the parent element.
+
+## 3. `font-weight`
+
+The `font-weight` property defines the thickness of the font. Common values are `normal`, `bold`, or numeric values ranging from `100` to `900`.
+
+### Example:
+
+```css
 h1 {
   font-weight: bold;
 }
@@ -54,21 +62,25 @@ h1 {
 p {
   font-weight: 300;
 }
-Values:
-normal (400)
+```
 
-bold (700)
+### Values:
 
-bolder (a stronger weight than the parent element)
+- **normal (400)**
 
-lighter (a lighter weight than the parent element)
+- **bold (700)**
 
-4. font-style
-The font-style property allows you to specify whether the text should be italicized or not. The common values are normal, italic, and oblique.
+- **bolder:** A stronger weight than the parent element.
 
-Example:
-css
-Copy
+- **lighter:** A lighter weight than the parent element.
+
+## 4. `font-style`
+
+The `font-style` property allows you to specify whether the text should be italicized or not. The common values are `normal`, `italic`, and `oblique`.
+
+### Example:
+
+```css
 em {
   font-style: italic;
 }
@@ -76,11 +88,13 @@ em {
 p {
   font-style: oblique;
 }
-Values:
-normal: Default style, no slant.
+```
 
-italic: The text is italicized.
+### Values:
 
-oblique: The text is slanted, similar to italic but not exactly the same.
+- **normal:** Default style, no slant.
 
- 
+- **italic:** The text is italicized.
+
+- **oblique:** The text is slanted, similar to italic but not exactly the same.
+

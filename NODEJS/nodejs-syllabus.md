@@ -1,94 +1,106 @@
+# Node.js Syllabus (Basic to Advanced)
 
-# Node.js Complete Roadmap (Basic to Advanced)
-
-## 🌱 Basics of Node.js
+## Introduction to Node.js
 - What is Node.js?
-  - Features, use-cases, architecture
-- Installing Node.js & NPM
-- Running your first script
-- Global Objects
-  - `__dirname`, `__filename`, `process`, `require`
-- Modules in Node.js
-  - Built-in Modules (like `fs`, `path`, `http`)
-  - Creating Custom Modules
-  - `module.exports` & `require`
-- NPM Basics
-  - Initializing project: `npm init`
-  - Installing packages: `npm install`
-  - Local vs Global packages
-  - package.json & package-lock.json
+- Features of Node.js
+- Advantages and Limitations
+- Node.js Architecture
+- Installing Node.js and NPM
+- First Node.js Program
 
-## 📁 Core Modules
-- File System (fs)
-  - Reading & Writing files (sync/async)
-  - File/Directory operations
-- Path Module
-- Events Module
-  - EventEmitter
-- OS Module
-- HTTP Module
-  - Creating server
-  - Handling requests & responses
+## Node.js Fundamentals
+- Node.js REPL
+- Node.js Modules
+  - Built-in Modules
+  - Creating Custom Modules
+  - Importing & Exporting
+- NPM (Node Package Manager)
+  - Installing Packages
+  - Local vs Global Installation
+  - package.json and package-lock.json
+
+## File System Module
+- Reading and Writing Files
+- Working with File Paths
+- Creating, Renaming, Deleting Files and Directories
 - Streams and Buffers
 
-## 🧱 Express.js Framework
-- Installing Express
-- Routing in Express
-- Middleware
-- Serving Static Files
-- Templating Engines
-  - EJS, Pug
-- Handling Forms & Data
-  - Body-parser, URL-encoded data
-- RESTful APIs
-  - CRUD Operations
+## Asynchronous Programming
+- Callbacks
+- Promises
+- Async/Await
 - Error Handling
 
-## 📦 Working with Databases
-- MongoDB with Mongoose
-  - Connection, Schema, Models
+## Events and Event Loop
+- Event Emitter
+- Creating and Listening to Events
+- Understanding the Event Loop
+- Process and nextTick
+
+## HTTP and Web Servers
+- Creating a Basic HTTP Server
+- Handling Requests and Responses
+- Routing
+- Serving Static Files
+
+## Express.js Framework
+- Introduction to Express
+- Creating Express App
+- Routing in Express
+- Middleware
+- Handling Forms and Data (body-parser)
+- Template Engines (EJS, Pug, Handlebars)
+
+## Working with Databases
+- MongoDB and Mongoose
   - CRUD Operations
-  - Data Validation
-- MySQL / PostgreSQL (Optional)
-  - Using `mysql2` or `sequelize`
+  - Schema and Models
+  - Validation
+- MySQL with Node.js
+  - Connection and Queries
 
-## 🔐 Authentication & Authorization
-- User Authentication
-  - Login/Register systems
-  - Password hashing (bcrypt)
-- JWT (JSON Web Tokens)
-  - Token creation & validation
-  - Protected routes
-- OAuth (Google, GitHub, etc) *(optional)*
-
-## ⚙️ Advanced Concepts
-- Asynchronous Programming
-  - Callbacks, Promises, async/await
-- Error Handling Best Practices
-- Environment Variables (.env)
-- File Uploads (Multer)
-- CORS & Security Middlewares
-  - Helmet, Rate Limiting, etc.
-- API Rate Limiting & Throttling
-- Socket.IO for Real-time Apps
-- Event Loop, Call Stack, and Async Handling
-
-## 🧪 Testing and Debugging
-- Debugging with VS Code
-- Unit Testing
-  - Mocha, Chai, Jest
-- Integration Testing
+## RESTful APIs
+- Creating REST APIs using Express
+- CRUD Operations
+- Status Codes and Error Handling
 - Postman for API Testing
 
-## 📤 Deploying Node.js Apps
-- Deploying to Render, Vercel, or Railway
-- Using PM2 for Production
-- Deploying on VPS (e.g., DigitalOcean)
-- Dockerize Node.js App *(optional)*
+## Authentication and Authorization
+- Sessions and Cookies
+- JWT (JSON Web Tokens)
+- Passport.js Authentication
 
-## 🛠️ Project Ideas for Practice
-- Todo API
-- Blog App
+## Real-time Communication
+- Introduction to WebSockets
+- Socket.io Basics
+- Real-time Chat App Example
+
+## Testing in Node.js
+- Unit Testing with Mocha and Chai
+- Integration Testing
+- Test-Driven Development (TDD)
+
+## Deployment and DevOps
+- Environment Variables (.env)
+- Using PM2 for Process Management
+- Deploying to Platforms (Heroku, Vercel, etc.)
+- CI/CD Basics
+
+## Advanced Topics
+- Clustering and Worker Threads
+- Streams in Depth
+- Performance Optimization
+- Security Best Practices
+
+## Tools and Best Practices
+- Linting and Formatting (ESLint, Prettier)
+- Debugging Node.js Applications
+- Project Structure and Code Organization
+
+## Projects for Practice
+- Todo App (REST API)
 - Authentication System
-- Chat App using Socket.IO
-- RESTful API with MongoDB
+- Blog Platform
+- Chat Application
+- File Upload System
+

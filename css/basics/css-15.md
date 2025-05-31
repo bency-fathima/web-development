@@ -7,7 +7,7 @@ CSS provides two main ways to add shadows to elements:
 
 ## 1. Text Shadow
 
-Used to apply shadow effects to **text**.
+Used to apply shadow effects to **text**..
 
 ```css
 selector {

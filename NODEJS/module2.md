@@ -73,7 +73,8 @@ Built-in interactive shell for Node.js.
 
 Used for quick testing and debugging.
 
-Start REPL
+Start REPL:
+
 bash
 Copy code
 node
@@ -134,7 +135,8 @@ fs.writeFileSync('data.txt', 'Hello Node');
 const data = fs.readFileSync('data.txt', 'utf8');
 console.log(data);
 ✍️ Creating Custom Modules
-Example: math.js
+math.js
+
 js
 Copy code
 function add(a, b) {
@@ -164,7 +166,8 @@ Lets you install and manage dependencies.
 
 Provides access to thousands of open-source packages.
 
-Check NPM version
+Check NPM version:
+
 bash
 Copy code
 npm -v
@@ -223,8 +226,11 @@ Stores exact versions of installed dependencies.
 
 Ensures same versions across environments.
 
-Example
+Example:
+
 package.json → "express": "^4.18.0" (any 4.x version).
 
 package-lock.json → "express": "4.18.2" (exact).
 
+yaml
+Copy code

@@ -1,4 +1,4 @@
-Node.js Basics
+🌐 Node.js Basics
 📌 What is Node.js?
 
 Node.js is a JavaScript runtime built on Chrome’s V8 engine.
@@ -62,3 +62,13 @@ console.log("Hello, Node.js!");
 Run:
 
 node app.js
+
+Example 2: Simple Server
+// server.js
+const http = require('http');
+
+http.createServer((req, res) => {
+  res.end("Hello World from Node.js");
+}).listen(3000);
+
+console.log("Server running at http://localhost:3000");

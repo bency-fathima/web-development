@@ -1,74 +1,108 @@
-🌐 Node.js Basics
-📌 What is Node.js?
 
-Node.js is a JavaScript runtime built on Chrome’s V8 engine.
+# 🌐 Node.js Basics Notes
 
-Lets you run JavaScript outside the browser (on servers).
+---
 
-Used for APIs, web servers, real-time apps.
+## 📌 What is Node.js?
+- Node.js is a **JavaScript runtime** built on Chrome’s V8 engine.  
+- Lets you run JavaScript **outside the browser** (on servers).  
+- Used for **APIs, web servers, and real-time applications**.  
 
-⚡ Features
+---
 
-Fast → Powered by V8 engine.
+## ⚡ Features of Node.js
+- **Fast** → Powered by V8 engine.  
+- **Asynchronous & Non-blocking** → Handles multiple requests without waiting.  
+- **Event-driven** → Uses events & callbacks.  
+- **Single-threaded** → Uses one main thread but handles many connections.  
+- **Cross-platform** → Works on Windows, Linux, macOS.  
 
-Asynchronous → Non-blocking I/O.
+---
 
-Single-threaded but handles many requests.
+## 🛠️ Installation
+1. Download Node.js from [nodejs.org](https://nodejs.org).  
+2. Verify installation:  
+   ```bash
+   node -v
+   npm -v
+   ```
 
-Cross-platform (Windows, Linux, Mac).
+---
 
-NPM → Huge package library.
+## 📂 Node.js Modules
+- **Core Modules** → fs, http, path, os, events, etc.  
+- **Local Modules** → Your own created modules.  
+- **Third-party Modules** → Installed using `npm`.  
 
-✅ Advantages
+Example:  
+```js
+const fs = require("fs");
+fs.writeFileSync("test.txt", "Hello Node.js");
+```
 
-Easy for JS developers.
+---
 
-Good for APIs and real-time apps.
+## 🌍 Creating a Simple Server
+```js
+const http = require("http");
 
-Large community support.
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.end("Hello, Node.js!");
+});
 
-❌ Limitations
+server.listen(3000, () => {
+  console.log("Server running at http://localhost:3000");
+});
+```
 
-Not best for CPU-heavy tasks (e.g., image processing).
+---
 
-Single-threaded → heavy tasks block execution.
+## 📦 npm (Node Package Manager)
+- Install a package:  
+  ```bash
+  npm install express
+  ```
+- Uninstall a package:  
+  ```bash
+  npm uninstall express
+  ```
+- Initialize project:  
+  ```bash
+  npm init -y
+  ```
 
-🏗️ Node.js Architecture
+---
 
-Event Loop handles requests.
+## 🔄 Event Loop in Node.js
+- Handles asynchronous operations.  
+- Uses **callbacks, promises, async/await**.  
 
-Non-blocking I/O for fast response.
+Example:  
+```js
+setTimeout(() => {
+  console.log("Hello after 2 seconds");
+}, 2000);
+```
 
-Uses Worker Threads for heavy tasks.
+---
 
-⚙️ Install Node.js & NPM
+## 🚀 Express.js Basics
+```js
+const express = require("express");
+const app = express();
 
-Download from nodejs.org
-.
+app.get("/", (req, res) => {
+  res.send("Hello from Express!");
+});
 
-Install → Choose LTS version.
+app.listen(5000, () => console.log("Server running on port 5000"));
+```
 
-Verify:
+---
 
-node -v
-npm -v
-
-🚀 First Node.js Program
-Example 1: Hello World
-// app.js
-console.log("Hello, Node.js!");
-
-
-Run:
-
-node app.js
-
-Example 2: Simple Server
-// server.js
-const http = require('http');
-
-http.createServer((req, res) => {
-  res.end("Hello World from Node.js");
-}).listen(3000);
-
-console.log("Server running at http://localhost:3000");
+## 📑 Summary
+- Node.js = JavaScript runtime for server-side.  
+- Uses **event-driven & non-blocking** architecture.  
+- Works with **modules & npm**.  
+- Commonly used with **Express.js** for web apps.  

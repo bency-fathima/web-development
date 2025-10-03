@@ -1,236 +1,140 @@
-# 🌐 Node.js Complete Notes (Beginner → Advanced)
+
+# 📦 Node.js Modules (Detailed Notes)
 
 ---
 
-## 📌 What is Node.js?
-- Node.js is a **JavaScript runtime** built on Chrome’s V8 engine.  
-- Lets you run JavaScript **outside the browser** (on servers).  
-- Used for **APIs, web servers, and real-time applications**.  
+## 🏷️ What are Modules in Node.js?
+- A **module** is a reusable block of code whose existence does not accidentally impact other code.  
+- Node.js has a **modular system** to organize code into separate files and reuse them.  
+- Helps in **maintainability, scalability, and reusability** of code.
 
 ---
 
-## ⚡ Features
-- **Fast** → Powered by V8 engine.  
-- **Asynchronous** → Non-blocking I/O.  
-- **Single-threaded** but can handle thousands of requests.  
-- **Cross-platform** → Runs on Windows, Linux, Mac.  
-- **NPM** → Largest open-source package ecosystem.  
+## 📂 Types of Modules in Node.js
 
----
+### 1. Core Modules (Built-in)
+- Provided by Node.js itself.  
+- Can be imported directly without installation.  
 
-## ✅ Advantages
-- Easy to learn for JS developers.  
-- Great for APIs and real-time apps.  
-- Large community + strong ecosystem.  
+**Examples:**
+- `fs` → File System
+- `http` → Server creation
+- `path` → File paths
+- `os` → System information
+- `events` → Event handling  
 
-### ❌ Limitations
-- Not suitable for **CPU-heavy tasks** (e.g., ML, image processing).  
-- Single-threaded → heavy tasks may block execution.  
+**Example:**
+```js
+const fs = require("fs");
 
----
-
-## 🏗️ Node.js Architecture
-- Based on **Single-threaded Event Loop**.  
-- Handles **non-blocking I/O** requests efficiently.  
-- Uses **Worker Threads** for CPU-intensive tasks.  
-
----
-
-## ⚙️ Install Node.js & NPM
-1. Download from [https://nodejs.org](https://nodejs.org).  
-2. Install → Choose **LTS version**.  
-3. Verify installation:
-   ```bash
-   node -v
-   npm -v
-🚀 First Node.js Program
-Example 1: Hello World
-js
-Copy code
-// app.js
-console.log("Hello, Node.js!");
-Run:
-
-bash
-Copy code
-node app.js
-Example 2: Simple Server
-js
-Copy code
-// server.js
-const http = require('http');
-
-http.createServer((req, res) => {
-  res.end("Hello World from Node.js");
-}).listen(3000);
-
-console.log("Server running at http://localhost:3000");
-📘 Node.js Fundamentals
-⚡ Node.js REPL
-REPL = Read, Eval, Print, Loop
-
-Built-in interactive shell for Node.js.
-
-Used for quick testing and debugging.
-
-Start REPL:
-
-bash
-Copy code
-node
-REPL Example
-bash
-Copy code
-> 2 + 3
-5
-> console.log("Hello")
-Hello
-undefined
-REPL Commands
-.help → show help
-
-.exit → quit
-
-.save file.js → save session
-
-.load file.js → load file
-
-📦 Node.js Modules
-Modules = Reusable blocks of code.
-
-Each file is a module in Node.js.
-
-Types:
-
-Built-in Modules → (http, fs, path, etc.)
-
-Custom Modules → (your own code)
-
-Third-party Modules → (installed via npm)
-
-🔧 Built-in Modules
-Some common built-in modules:
-
-fs → File system
-
-http → Create servers
-
-os → System info
-
-path → Work with file paths
-
-events → Event handling
-
-url → Parse URLs
-
-Example: fs module
-js
-Copy code
-const fs = require('fs');
-
-// Write to file
-fs.writeFileSync('data.txt', 'Hello Node');
+// Write file
+fs.writeFileSync("hello.txt", "Hello Node.js");
 
 // Read file
-const data = fs.readFileSync('data.txt', 'utf8');
+const data = fs.readFileSync("hello.txt", "utf-8");
 console.log(data);
-✍️ Creating Custom Modules
-math.js
+```
 
-js
-Copy code
+---
+
+### 2. Local Modules (User-defined)
+- Created by developers inside the project.  
+- Exported using `module.exports` and imported using `require()`.  
+
+**Example:**  
+```js
+// math.js
 function add(a, b) {
   return a + b;
 }
-function sub(a, b) {
+function subtract(a, b) {
   return a - b;
 }
+module.exports = { add, subtract };
 
-// Export
-module.exports = { add, sub };
-📥 Importing & Exporting
-js
-Copy code
-const math = require('./math');
-
+// index.js
+const math = require("./math");
 console.log(math.add(5, 3));  // 8
-console.log(math.sub(10, 4)); // 6
-module.exports → Export from a file.
+console.log(math.subtract(10, 4)); // 6
+```
 
-require() → Import into another file.
+---
 
-📦 NPM (Node Package Manager)
-Comes with Node.js by default.
+### 3. Third-party Modules (via npm)
+- Installed from npm (Node Package Manager).  
+- Examples: `express`, `mongoose`, `lodash`.  
 
-Lets you install and manage dependencies.
-
-Provides access to thousands of open-source packages.
-
-Check NPM version:
-
-bash
-Copy code
-npm -v
-📥 Installing Packages
-Local Installation
-bash
-Copy code
+**Install a module:**  
+```bash
 npm install express
-Installed in node_modules/ inside the project.
+```
 
-Saved in package.json dependencies.
+**Use it in code:**  
+```js
+const express = require("express");
+const app = express();
 
-Global Installation
-bash
-Copy code
-npm install -g nodemon
-Available system-wide.
+app.get("/", (req, res) => {
+  res.send("Hello from Express!");
+});
 
-Used for CLI tools.
+app.listen(3000, () => console.log("Server running on port 3000"));
+```
 
-📂 package.json
-Project metadata + dependencies list.
+---
 
-Created using:
+## 📥 Import & Export in Node.js
 
-bash
-Copy code
-npm init -y
-Example package.json
-json
-Copy code
-{
-  "name": "myapp",
-  "version": "1.0.0",
-  "description": "My first Node.js app",
-  "main": "app.js",
-  "scripts": {
-    "start": "node app.js"
-  },
-  "dependencies": {
-    "express": "^4.18.2"
-  }
+### CommonJS (Default in Node.js)
+- Uses `require()` and `module.exports`.  
+
+**Example:**  
+```js
+// utils.js
+module.exports.sayHello = function() {
+  return "Hello!";
 }
-name → project name
 
-scripts → run commands (npm start)
+// app.js
+const utils = require("./utils");
+console.log(utils.sayHello());
+```
 
-dependencies → required packages
+### ES Modules (ESM)
+- Uses `import` and `export`.  
+- Enable by adding `"type": "module"` in `package.json`.  
 
-devDependencies → only for development
+**Example:**  
+```js
+// math.mjs
+export function multiply(a, b) {
+  return a * b;
+}
 
-📂 package-lock.json
-Auto-generated file by npm.
+// index.mjs
+import { multiply } from "./math.mjs";
+console.log(multiply(4, 5)); // 20
+```
 
-Stores exact versions of installed dependencies.
+---
 
-Ensures same versions across environments.
+## 🔄 Difference Between CommonJS & ES Modules
 
-Example:
+| Feature             | CommonJS          | ES Modules |
+|---------------------|------------------|------------|
+| Import Syntax       | `require()`       | `import`   |
+| Export Syntax       | `module.exports`  | `export`   |
+| File Extension      | `.js`             | `.mjs` (or `"type":"module"`) |
+| Loading             | Synchronous       | Asynchronous |
+| Default in Node.js  | ✅ Yes             | ❌ No (needs config) |
 
-package.json → "express": "^4.18.0" (any 4.x version).
+---
 
-package-lock.json → "express": "4.18.2" (exact).
+## 📑 Summary
+- **Core modules** → Provided by Node.js.  
+- **Local modules** → Created by developers.  
+- **Third-party modules** → Installed using `npm`.  
+- **CommonJS** is the default module system in Node.js.  
+- **ES Modules** are modern and use `import/export`.  
 
-yaml
-Copy code
+---
